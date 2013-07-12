@@ -10,7 +10,8 @@
             [ring.adapter.jetty :as jetty]
             [ring.middleware.basic-authentication :as basic]
             [cemerick.drawbridge :as drawbridge]
-            [environ.core :refer [env]]))
+            [environ.core :refer [env]]
+            (helloworld.views [index :as index])))
 
 (defn- authenticated? [user pass]
   ;; TODO: heroku config:add REPL_USER=[...] REPL_PASSWORD=[...]
@@ -24,7 +25,7 @@
 (defroutes app
   (ANY "/repl" {:as req}
        (drawbridge req))
-  (GET "/" [] (html [:h1 "Hello"]))
+  (GET "/" [] (index/view-index))
   (ANY "*" []
        (route/not-found (slurp (io/resource "404.html")))))
 
