@@ -1,4 +1,5 @@
 (ns helloworld.web
+  (:use [hiccup.core])
   (:require [compojure.core :refer [defroutes GET PUT POST DELETE ANY]]
             [compojure.handler :refer [site]]
             [compojure.route :as route]
@@ -23,10 +24,7 @@
 (defroutes app
   (ANY "/repl" {:as req}
        (drawbridge req))
-  (GET "/" []
-       {:status 200
-        :headers {"Content-Type" "text/plain"}
-        :body (pr-str ["Hello" :from 'Heroku])})
+  (GET "/" [] (html [:h1 "Hello"]))
   (ANY "*" []
        (route/not-found (slurp (io/resource "404.html")))))
 
