@@ -8,11 +8,24 @@
 (defn view-head []
   [:head
     [:meta {:name "author" :content "Patrick Rock"}]
-    [:meta {:name "description" :content "My personal website"}]
+    [:meta {:name "description" :content "Patrick Rock: Softare Engineer. This site was built with Clojure."}]
     [:meta {:charset "utf-8"}]
     (include-css "main.css")])
 
+(defn view-sidebar []
+  [:div.container {:id "sidebar"}
+    [:nav 
+      [:h3 {:id "name"} "Patrick Rock"]
+      [:ul
+        [:li [:a {:href "./"} "Home"]]
+        [:li [:a {:href "./about"} "About"]]
+        [:li [:a {:href "./writings"} "Writings"]]
+        [:li [:a {:href "https://github.com/johnprock"} "Github"]]
+        [:li [:a {:href "./contact"} "Contact"]]]]])
+
 (defn view-layout [body]
   [:body
-    [:h1 {:id "name"}  "Patrick Rock"]
+    [:div.container (view-sidebar)]
     [:div.container body]])
+
+

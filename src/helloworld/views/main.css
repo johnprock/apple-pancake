@@ -1,6 +1,11 @@
+/* Patrick Rock
+   7/13/2013 */
+
 /* ==========================================================================
    HTML5 Boilerplate styles - h5bp.com (generated via initializr.com)
    ========================================================================== */
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700,100);
+
 
 html,
 button,
@@ -13,6 +18,7 @@ textarea {
 body {
     font-size: 1em;
     line-height: 1.4;
+    font-family: 'Roboto Slab', serif;
 }
 
 ::-moz-selection {
@@ -61,13 +67,24 @@ textarea {
    ========================================================================== */
 
 
+#sidebar {
 
-#name {
-  color:red;
+}
+
+ul {
+    list-style-type: none;
 }
 
 
+a {
+    text-decoration:none;
+    color:inherit;
+}
 
+a:hover
+{ 
+    font-weight: bold;
+}
 
 
 

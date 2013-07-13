@@ -29,6 +29,9 @@
   (ANY "/repl" {:as req}
        (drawbridge req))
   (GET "/" [] (index/view-index))
+  (GET "/about" [] (index/view-about))
+  (GET "/writings" [] (index/view-writings))
+  (GET "/contact" [] (index/view-contact))
   (route/files "/" {:root "src/helloworld/views"})
   (ANY "*" []
        (route/not-found (slurp (io/resource "404.html")))))

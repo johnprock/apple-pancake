@@ -6,4 +6,15 @@
   (:require [helloworld.views.layout :as layout]))
 
 (defn view-index []
-  (html (layout/view-head) (layout/view-layout "It's alive!")))
+  (html (layout/view-head) (layout/view-layout "Hello I'm Patrick Rock. I'm interested in Jazz and Math.")))
+
+(defn view-about []
+	(html (layout/view-head) (layout/view-layout "about")))
+
+(defn view-writings []
+	(html [:body 
+		    [:div "writings"]]))
+
+(defn view-contact []
+	(html [:body 
+		    [:div "contact"]]))
