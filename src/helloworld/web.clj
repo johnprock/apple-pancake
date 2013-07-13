@@ -1,3 +1,6 @@
+;Patrick Rock
+;7/13/2013
+
 (ns helloworld.web
   (:use [hiccup.core])
   (:require [compojure.core :refer [defroutes GET PUT POST DELETE ANY]]
@@ -26,6 +29,7 @@
   (ANY "/repl" {:as req}
        (drawbridge req))
   (GET "/" [] (index/view-index))
+  (route/files "/" {:root "src/helloworld/views"})
   (ANY "*" []
        (route/not-found (slurp (io/resource "404.html")))))
 
