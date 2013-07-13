@@ -5,6 +5,7 @@
    HTML5 Boilerplate styles - h5bp.com (generated via initializr.com)
    ========================================================================== */
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700,100);
+@import url(http://fonts.googleapis.com/css?family=Buenard);
 
 
 html,
@@ -18,7 +19,6 @@ textarea {
 body {
     font-size: 1em;
     line-height: 1.4;
-    font-family: 'Roboto Slab', serif;
 }
 
 ::-moz-selection {
@@ -66,13 +66,35 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-
+  
 #sidebar {
+  float:left;
+  width: 20%;
+  margin-left: 15%;
+  margin-top: 20px;
+  font-family: 'Roboto Slab', serif;
 
+}
+
+#main{
+    float:right;
+    width:60%;
+    margin-top: 100px;
+}
+
+#wrap {
+    height: 100%;
+}
+
+#name {
+    font-family: 'Buenard', serif;
+    font-size: 160%;
 }
 
 ul {
     list-style-type: none;
+    margin:0;
+    padding:0;
 }
 
 
@@ -84,6 +106,13 @@ a {
 a:hover
 { 
     font-weight: bold;
+}
+
+body,
+html {
+margin:0;
+padding:0;
+color:#000;
 }
 
 

@@ -12,9 +12,8 @@
 	(html (layout/view-head) (layout/view-layout "about")))
 
 (defn view-writings []
-	(html [:body 
-		    [:div "writings"]]))
+	(html (layout/view-head) (layout/view-layout "writings")))
 
 (defn view-contact []
-	(html [:body 
-		    [:div "contact"]]))
+	(html (layout/view-head) (layout/view-layout "contact")))
+

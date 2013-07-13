@@ -13,7 +13,7 @@
     (include-css "main.css")])
 
 (defn view-sidebar []
-  [:div.container {:id "sidebar"}
+  [:div {:id "sidebar"}
     [:nav 
       [:h3 {:id "name"} "Patrick Rock"]
       [:ul
@@ -25,7 +25,8 @@
 
 (defn view-layout [body]
   [:body
-    [:div.container (view-sidebar)]
-    [:div.container body]])
+    [:div {:id "wrap"}
+      (view-sidebar)
+      [:div {:id "main"} body]]])
 
 
