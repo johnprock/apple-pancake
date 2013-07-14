@@ -29,4 +29,13 @@
       (view-sidebar)
       [:div {:id "main"} body]]])
 
-
+(defn contact-form []
+  [:div {:id "contact-form"}
+    [:header "Contact Me"]
+    [:form
+      [:fieldset
+        [:div.field [:input {:type "text" :placeholder "Your Name"}]]
+        [:div.field [:input {:type "text" :placeholder "Your Email Address"}]]
+        [:div.field [:input {:type "text" :placeholder "Your Message"}]]
+        [:div.field [:button {:type "submit"} "Send Message"]]]]
+    [:p "Or email me at patrickrock@tamu.edu"]])

@@ -15,5 +15,5 @@
 	(html (layout/view-head) (layout/view-layout "writings")))
 
 (defn view-contact []
-	(html (layout/view-head) (layout/view-layout "contact")))
+	(html (layout/view-head) (layout/view-layout (layout/contact-form))))
 
