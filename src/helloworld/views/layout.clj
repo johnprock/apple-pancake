@@ -21,6 +21,7 @@
         [:li [:a {:href "./about"} "About"]]
         [:li [:a {:href "./writings"} "Writings"]]
         [:li [:a {:href "https://github.com/johnprock"} "Github"]]
+        [:li [:a {:href "www.linkedin.com/pub/patrick-rock/77/32a/54a"} "Linkedin"]]
         [:li [:a {:href "./contact"} "Contact"]]]]])
 
 (defn view-layout [body]
@@ -34,8 +35,8 @@
     [:header "Contact Me"]
     [:form
       [:fieldset
-        [:div.field [:input {:type "text" :placeholder "Your Name"}]]
-        [:div.field [:input {:type "text" :placeholder "Your Email Address"}]]
-        [:div.field [:input {:type "text" :placeholder "Your Message"}]]
-        [:div.field [:button {:type "submit"} "Send Message"]]]]
+        [:div.field [:input {:id "name" :type "text" :placeholder "Your Name"}]]
+        [:div.field [:input {:id "email" :type "text" :placeholder "Your Email Address"}]]
+        [:div.field {:id "message"} [:textarea {:id "message" :rows "4" :cols "50" :placeholder "Your Message"}]]
+        [:div.field [:button {:id "send" :type "submit"} "Send Message"]]]]
     [:p "Or email me at patrickrock@tamu.edu"]])
