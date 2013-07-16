@@ -9,7 +9,7 @@
   (html (layout/view-head) (layout/view-layout "Hello I'm Patrick Rock. I'm interested in Jazz and Math.")))
 
 (defn view-about []
-	(html (layout/view-head) (layout/view-layout "about")))
+	(html (layout/view-head) (layout/view-layout (layout/about-form))))
 
 (defn view-writings []
 	(html (layout/view-head) (layout/view-layout "writings")))

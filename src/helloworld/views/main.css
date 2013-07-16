@@ -66,13 +66,19 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-  
+ 
+.pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50% 50% 50% 50%;
+}
+ 
 #sidebar {
-  float:left;
-  width: 20%;
-  margin-left: 15%;
-  margin-top: 20px;
-  font-family: 'Roboto Slab', serif;
+    float:left;
+    width: 20%;
+    margin-left: 15%;
+    margin-top: 20px;
+    font-family: 'Roboto Slab', serif;
 
 }
 
@@ -114,8 +120,6 @@ margin:0;
 padding:0;
 color:#000;
 }
-
-
 
 
 /* ==========================================================================
