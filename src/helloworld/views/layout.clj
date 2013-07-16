@@ -22,6 +22,7 @@
         [:li [:a {:href "./writings"} "Writings"]]
         [:li [:a {:href "https://github.com/johnprock"} "Github"]]
         [:li [:a {:href "https://linkedin.com/pub/patrick-rock/77/32a/54a"} "Linkedin"]]
+        [:li [:a {:href "./web_resume.pdf"} "Resume"]]
         [:li [:a {:href "./contact"} "Contact"]]]]])
 
 (defn view-layout [body]
