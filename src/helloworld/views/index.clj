@@ -16,7 +16,3 @@
 
 (defn view-contact []
 	(html (layout/view-head) (layout/view-layout (layout/contact-form))))
-
-(defn view-send [name]
-	(html (layout/view-head) (layout/view-layout (str "Thank you " name ", your message was sent sucessfully."))))
-

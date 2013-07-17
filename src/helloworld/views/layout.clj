@@ -32,14 +32,11 @@
 
 (defn contact-form []
   [:div {:id "contact-form"}
-    [:header "Contact Me"]
-    [:form {:name "input" :action "/send" :method "post"}
-      [:fieldset
-        [:div.field [:input {:name "email_name" :type "text" :placeholder "Your Name"}]]
-        [:div.field [:input {:name "email" :type "text" :placeholder "Your Email Address"}]]
-        [:div.field [:textarea {:name "message" :rows "4" :cols "50" :placeholder "Your Message"}]]
-        [:div.field [:button {:type "submit" :value "submit"} "Send Message"]]]]
-    [:p "Or email me at patrickrock@tamu.edu"]])
+    [:h2 "Contact Me"]
+    [:p "I can be reached at "
+      [:em "patrickrock@tamu.edu"]
+      " or " 
+      [:em "prock2011@gmail.com."]]])
 
 (defn about-form []
   [:div {:id "about-form"}
