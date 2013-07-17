@@ -45,5 +45,5 @@
   [:div {:id "about-form"}
     [:img.pic {:src "profilepic.jpeg"}]
     [:p "Hi I'm Patrick! I'm a jazz musician and a programmer. I'm currently studying computer science at Texas A&M.
-         This summer I'm working as a Software Engineering intern at IBM."]
-    [:p "Compilers are what get me excited in computer science. I'm a big fan of Lisp and Haskell. I also play saxaphone and piano semi-professionally."]])
+         This summer I'm working as a Software Engineering intern at IBM. 
+         Compilers are what get me excited in computer science. I'm a big fan of Lisp and Haskell. I also play saxaphone and piano semi-professionally."]])
