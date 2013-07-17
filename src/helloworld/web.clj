@@ -2,7 +2,8 @@
 ;7/13/2013
 
 (ns helloworld.web
-  (:use [hiccup.core])
+  (:use [hiccup.core]
+        [postal.core])
   (:require [compojure.core :refer [defroutes GET PUT POST DELETE ANY]]
             [compojure.handler :refer [site]]
             [compojure.route :as route]
@@ -16,6 +17,14 @@
             [environ.core :refer [env]]
             (helloworld.views [index :as index])))
 
+(defn send_mail [email email_name message]
+  (send-message {:from (str email)
+                 :to ["prock2011@gmail.com"]
+                 :cc ""
+                 :subject "Website message"
+                 :body (str message "\n\n\nFrom: " email_name)
+                 :X-Tra "hi"}))
+
 (defn- authenticated? [user pass]
   ;; TODO: heroku config:add REPL_USER=[...] REPL_PASSWORD=[...]
   (= [user pass] [(env :repl-user false) (env :repl-password false)]))
@@ -28,10 +37,11 @@
 (defroutes app
   (ANY "/repl" {:as req}
        (drawbridge req))
-  (GET "/" [] (index/view-index))
+  (GET "/" [] (index/view-about))
   (GET "/about" [] (index/view-about))
   (GET "/writings" [] (index/view-writings))
   (GET "/contact" [] (index/view-contact))
+  (POST "/send" [email email_name message] (send_mail email email_name message) (index/view-send email_name))
   (route/files "/" {:root "src/helloworld/views"})
   (ANY "*" []
        (route/not-found (slurp (io/resource "404.html")))))
@@ -54,6 +64,8 @@
                             trace/wrap-stacktrace))
                          (site {:session {:store store}}))
                      {:port port :join? false})))
+
+
 
 ;; For interactive development:
 ;; (.stop server)

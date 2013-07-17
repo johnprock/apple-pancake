@@ -79,22 +79,26 @@ textarea {
     margin-left: 15%;
     margin-top: 20px;
     font-family: 'Roboto Slab', serif;
-
+    color: rgb(115,115,115);
+    height: 100%
 }
 
 #main{
     float:right;
     width:60%;
     margin-top:100px;
+
 }
 
 #wrap {
     height: 100%;
+    width: 80%;
 }
 
 #name {
     font-family: 'Buenard', serif;
     font-size: 160%;
+    color: rgb(0,0,0);
 }
 
 ul {
@@ -112,6 +116,7 @@ a {
 a:hover
 { 
     font-weight: bold;
+    color: rgb(0,0,0);
 }
 
 body,

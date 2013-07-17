@@ -12,8 +12,11 @@
 	(html (layout/view-head) (layout/view-layout (layout/about-form))))
 
 (defn view-writings []
-	(html (layout/view-head) (layout/view-layout "writings")))
+	(html (layout/view-head) (layout/view-layout "This part of the page is still under development.")))
 
 (defn view-contact []
 	(html (layout/view-head) (layout/view-layout (layout/contact-form))))
+
+(defn view-send [name]
+	(html (layout/view-head) (layout/view-layout (str "Thank you " name ", your message was sent sucessfully."))))
 

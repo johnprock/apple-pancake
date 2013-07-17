@@ -17,8 +17,7 @@
     [:nav 
       [:h3 {:id "name"} "Patrick Rock"]
       [:ul
-        [:li [:a {:href "./"} "Home"]]
-        [:li [:a {:href "./about"} "About"]]
+        [:li [:a {:href "./about"} "Home"]]
         [:li [:a {:href "./writings"} "Writings"]]
         [:li [:a {:href "https://github.com/johnprock"} "Github"]]
         [:li [:a {:href "https://linkedin.com/pub/patrick-rock/77/32a/54a"} "Linkedin"]]
@@ -34,15 +33,17 @@
 (defn contact-form []
   [:div {:id "contact-form"}
     [:header "Contact Me"]
-    [:form
+    [:form {:name "input" :action "/send" :method "post"}
       [:fieldset
-        [:div.field [:input {:id "email_name" :type "text" :placeholder "Your Name"}]]
-        [:div.field [:input {:id "email" :type "text" :placeholder "Your Email Address"}]]
-        [:div.field {:id "message"} [:textarea {:id "message" :rows "4" :cols "50" :placeholder "Your Message"}]]
-        [:div.field [:button {:id "send" :type "submit"} "Send Message"]]]]
+        [:div.field [:input {:name "email_name" :type "text" :placeholder "Your Name"}]]
+        [:div.field [:input {:name "email" :type "text" :placeholder "Your Email Address"}]]
+        [:div.field [:textarea {:name "message" :rows "4" :cols "50" :placeholder "Your Message"}]]
+        [:div.field [:button {:type "submit" :value "submit"} "Send Message"]]]]
     [:p "Or email me at patrickrock@tamu.edu"]])
 
 (defn about-form []
   [:div {:id "about-form"}
     [:img.pic {:src "profilepic.jpeg"}]
-    [:p "Hello this is Patrick"]])
+    [:p "Hi I'm Patrick! I'm a jazz musician and a programmer. I'm currently studying computer science at Texas A&M.
+         This summer I'm working as a Software Engineering intern at IBM."]
+    [:p "Compilers are what get me excited in computer science. I'm a big fan of Lisp and Haskell. I also play saxaphone and piano semi-professionally."]])
