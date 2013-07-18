@@ -65,7 +65,28 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+.date {
+    float:right;
+}
 
+.bottom {
+    margin-top: 40px;
+    font-family: 'Roboto Slab', serif;
+    color: rgb(115,115,115);
+    float:bottom;
+}
+
+.prev {
+    float:left;
+}
+
+.next {
+    float:right;
+}
+
+.posts {
+    min-height: 500px;
+}
 
 .pic {
     width: 150px;
@@ -124,6 +145,8 @@ html {
 margin:0;
 padding:0;
 color:#000;
+min-height:100%;
+position:relative
 }
 
 

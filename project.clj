@@ -1,3 +1,6 @@
+;Patrick Rock
+;7/13/2013 
+
 (defproject helloworld "1.0.0-SNAPSHOT"
   :description "FIXME: write description"
   :url "http://helloworld.herokuapp.com"

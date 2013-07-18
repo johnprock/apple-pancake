@@ -31,7 +31,7 @@
        (drawbridge req))
   (GET "/" [] (index/view-about))
   (GET "/about" [] (index/view-about))
-  (GET "/writings" [] (index/view-writings))
+  (GET "/writings" [postnum] (index/view-writings postnum))
   (GET "/contact" [] (index/view-contact))
   (route/files "/" {:root "src/helloworld/views"})
   (ANY "*" []

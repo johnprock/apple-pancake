@@ -11,8 +11,8 @@
 (defn view-about []
 	(html (layout/view-head) (layout/view-layout (layout/about-form))))
 
-(defn view-writings []
-	(html (layout/view-head) (layout/view-layout "This part of the page is still under development.")))
+(defn view-writings [postnum]
+	(html (layout/view-head) (layout/view-layout (layout/writings-form postnum))))
 
 (defn view-contact []
 	(html (layout/view-head) (layout/view-layout (layout/contact-form))))

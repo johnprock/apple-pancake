@@ -3,7 +3,9 @@
 
 (ns helloworld.views.layout
   (:use [hiccup.core]
-        [hiccup.page]))
+        [hiccup.page])
+  (:import java.io.File)
+  (:require [helloworld.views.posts :as posts]))
 
 (defn view-head []
   [:head
@@ -18,10 +20,10 @@
       [:h3 {:id "name"} "Patrick Rock"]
       [:ul
         [:li [:a {:href "./about"} "Home"]]
-        [:li [:a {:href "./writings"} "Writings"]]
-        [:li [:a {:href "https://github.com/johnprock"} "Github"]]
-        [:li [:a {:href "https://linkedin.com/pub/patrick-rock/77/32a/54a"} "Linkedin"]]
-        [:li [:a {:href "./web_resume.pdf"} "Resume"]]
+        [:li [:a {:href "./writings?postnum=0"} "Writings"]]
+        [:li [:a {:href "https://github.com/johnprock"} "GitHub"]]
+        [:li [:a {:href "https://linkedin.com/pub/patrick-rock/77/32a/54a"} "LinkedIn"]]
+        [:li [:a {:href "./web_resume.pdf"} "Resumé"]]
         [:li [:a {:href "./contact"} "Contact"]]]]])
 
 (defn view-layout [body]
@@ -44,3 +46,24 @@
     [:p "Hi I'm Patrick! I'm a jazz musician and a programmer. I'm currently studying computer science at Texas A&M.
          This summer I'm working as a Software Engineering intern at IBM. 
          Compilers are what get me excited in computer science. I'm a big fan of Lisp and Haskell. I also play saxaphone and piano semi-professionally."]])
+
+(defn down_post [postnum] ; Go to the next post
+  (if (= 0 postnum) 
+      postnum
+      (- postnum 1)))
+
+(defn up_post [postnum] ; Go to the previous poset
+  (if (= postnum (- (count posts/posts) 1))
+      postnum
+      (+ postnum 1)))
+
+(defn writings-form [poststring]
+  (let [postnum (read-string poststring)]
+    [:div {:id "writings-form"}
+      [:h3 (:title (nth posts/posts postnum))]
+      [:div.posts (:content (nth posts/posts postnum))]
+      [:div.bottom
+        [:a.prev {:href (str "./writings?postnum=" (down_post postnum)) } "Previous"]
+        [:a.next {:href (str "./writings?postnum=" (up_post postnum)) } "Next"]]]))
+
+
