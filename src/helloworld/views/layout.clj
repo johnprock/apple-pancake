@@ -14,6 +14,7 @@
     [:meta {:charset "utf-8"}]
     [:script {:type "text/javascript" :src "shCore.js"}]
     [:script {:type "text/javascript" :src "shBrushHaskell.js"}]
+    [:script {:type "text/javascript" :src "shBrushJava.js"}]
     [:script {:type "text/javascript"} "SyntaxHighlighter.all()"]
     (include-css "main.css")
     (include-css "shCore.css")
