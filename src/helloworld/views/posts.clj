@@ -12,13 +12,14 @@
 	a Haskell solution would look like to some of the problems. The first question in the hard recursion section is interesting 
 	and reminds me of an Nvidia interview question. Given a set of numbers and a target, is there a group of numbers that sum to 
 	the target. Here's my Haskell solution:
-	<code>groupSum :: Int -> [Int] -> Int -> Bool
-    groupSum start nums target | start >= length nums = if target == 0
-	                                                then True
-	                                                else False
-	                           | otherwise = add || notadd
-	                           where add =  groupSum (start+1) nums target
-	                                 notadd = groupSum (start+1) nums (target - (nums !! start))</code></p>" "18/7/2013" "haskell"))
+	<pre class=\"brush: haskell\">groupSum :: Int -> [Int] -> Int -> Bool
+    groupSum start nums target 
+      | start >= length nums = if target == 0
+	                           then True
+	                           else False
+	  | otherwise = add || notadd
+	  where add =  groupSum (start+1) nums target
+	  notadd = groupSum (start+1) nums (target - (nums !! start))</pre></p>" "18/7/2013" "haskell"))
 
 
 

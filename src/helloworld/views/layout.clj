@@ -12,7 +12,12 @@
     [:meta {:name "author" :content "Patrick Rock"}]
     [:meta {:name "description" :content "Patrick Rock: Softare Engineer. This site was built with Clojure."}]
     [:meta {:charset "utf-8"}]
-    (include-css "main.css")])
+    [:script {:type "text/javascript" :src "shCore.js"}]
+    [:script {:type "text/javascript" :src "shBrushHaskell.js"}]
+    [:script {:type "text/javascript"} "SyntaxHighlighter.all()"]
+    (include-css "main.css")
+    (include-css "shCore.css")
+    (include-css "shThemeDefault.css")])
 
 (defn view-sidebar []
   [:div {:id "sidebar"}
