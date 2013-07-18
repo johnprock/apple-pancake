@@ -8,7 +8,7 @@
 	web blog interface and I may do the same. The idea is to be able to post from a web facing interface withough touching the code. 
 	Also check out <a href=\"http://iheanyi.com\">http://iheanyi.com</a></p>" "18/7/2013" "meta web first"))
 
-(def p1 (post "Group Sum" "<p>   I've been looking at <a href=\"http://codingbat.com\">coding bat</a> and was interested in what
+(def p1 (post. "Group Sum" "<p>   I've been looking at <a href=\"http://codingbat.com\">coding bat</a> and was interested in what
 	a Haskell solution would look like to some of the problems. The first question in the hard recursion section is interesting 
 	and reminds me of an Nvidia interview question. Given a set of numbers and a target, is there a group of numbers that sum to 
 	the target. Here's my Haskell solution:
