@@ -25,12 +25,13 @@
     [:nav 
       [:h3 {:id "name"} "Patrick Rock"]
       [:ul
-        [:li [:a {:href "./about"} "Home"]]
-        [:li [:a {:href "./writings?postnum=0"} "Writings"]]
-        [:li [:a {:href "https://github.com/johnprock"} "GitHub"]]
-        [:li [:a {:href "https://linkedin.com/pub/patrick-rock/77/32a/54a"} "LinkedIn"]]
-        [:li [:a {:href "./web_resume.pdf"} "Resumé"]]
-        [:li [:a {:href "./contact"} "Contact"]]]]])
+        [:li [:a.side_button {:href "./"} "Home"]]
+        [:li [:a.side_button {:href (str "./writings?postnum=" (Integer/toString (- (count posts/posts) 1)))} "Writings"]]
+        [:li [:a.side_button {:href "./projects"} "Projects"]]
+        [:li [:a.side_button {:href "https://github.com/johnprock"} "GitHub"]]
+        [:li [:a.side_button {:href "https://linkedin.com/pub/patrick-rock/77/32a/54a"} "LinkedIn"]]
+        [:li [:a.side_button {:href "./web_resume.pdf"} "Resumé"]]
+        [:li [:a.side_button {:href "./contact"} "Contact"]]]]])
 
 (defn view-layout [body]
   [:body
@@ -70,7 +71,15 @@
       [:div.posts (:content (nth posts/posts postnum))]
       [:small (:date (nth posts/posts postnum))]
       [:div.bottom
-        [:a.prev {:href (str "./writings?postnum=" (down_post postnum)) } "Previous"]
-        [:a.next {:href (str "./writings?postnum=" (up_post postnum)) } "Next"]]]))
+        [:a.prev.side_button {:href (str "./writings?postnum=" (down_post postnum)) } "Previous"]
+        [:a.next.side_button {:href (str "./writings?postnum=" (up_post postnum)) } "Next"]]]))
+
+(defn projects-form []
+  [:div.projects
+    [:h3 "Projects"]
+    [:ul
+      [:li [:a {:href "https://github.com/johnprock/apple-pancake/blob/master/README.md"} "My personal website"]]]])
+
+
 
 

@@ -33,6 +33,7 @@
   (GET "/about" [] (index/view-about))
   (GET "/writings" [postnum] (index/view-writings postnum))
   (GET "/contact" [] (index/view-contact))
+  (GET "/projects" [] (index/view-projects))
   (route/files "/" {:root "src/helloworld/views"})
   (ANY "*" []
        (route/not-found (slurp (io/resource "404.html")))))
