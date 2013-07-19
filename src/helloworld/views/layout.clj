@@ -51,7 +51,7 @@
     [:img.pic {:src "profilepic.jpeg"}]
     [:p "Hi I'm Patrick! I'm a jazz musician and a programmer. I'm currently studying computer science at Texas A&M.
          This summer I'm working as a Software Engineering intern at IBM. 
-         Compilers are what get me excited in computer science. I'm a big fan of Lisp and Haskell. I also play saxaphone and piano semi-professionally."]])
+         Compilers are what get me excited in computer science. I'm a big fan of Lisp and Haskell. I also play saxophone and piano semi-professionally."]])
 
 (defn down_post [postnum] ; Go to the next post
   (if (= 0 postnum) 
@@ -68,6 +68,7 @@
     [:div {:id "writings-form"}
       [:h3 (:title (nth posts/posts postnum))]
       [:div.posts (:content (nth posts/posts postnum))]
+      [:small (:date (nth posts/posts postnum))]
       [:div.bottom
         [:a.prev {:href (str "./writings?postnum=" (down_post postnum)) } "Previous"]
         [:a.next {:href (str "./writings?postnum=" (up_post postnum)) } "Next"]]]))
